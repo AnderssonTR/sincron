@@ -1,0 +1,15 @@
+/*Edicón de color DARK --> color coorporativo y tipo de letra*/
+:root {
+    --bs-dark: rgb(0, 133, 202);
+    --bs-dark-rgb: 0, 133, 202;
+     /* --bs-body-font-family: var(--bs-font-sans-serif);*/
+     --bs-body-font-family:'Barlow Semi Condensed', sans-serif; 
+  }
+
+  .link-dark {
+    color: rgb(0, 133, 202) !important;
+  }
+  .link-dark:hover, .link-dark:focus {
+    color: #339dd5 !important;
+  }
+  

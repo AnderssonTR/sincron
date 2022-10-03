@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap5', #pip install django-bootstartp-v5
 ]
 
 MIDDLEWARE = [
