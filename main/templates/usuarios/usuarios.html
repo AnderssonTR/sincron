@@ -1,6 +1,37 @@
 {% extends 'partials/body.html' %}
 
 {% block container %}
-    <h1>Usuarios</h1>
+    <h2>{{titulo}}</h2>
+    <a class="btn btn-primary " href="{% url 'usuarios-crear' %}">Crear</a>
+  
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Tipo Documento</th>
+                <th scope="col">No. Documento</th>
+                <th scope="col">e-mail</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Estado</th>
+
+            </tr>
+        </thead>
+        <tr>
+            
+            {% for usuario in usuarios  %}
+                <tr>
+                    <th scope="row">{{usuario.usuarioNombre}}</th>
+                    <td>{{usuario.usuarioApellido}}</td>
+                    <td>{{usuario.usuarioTipoDocumento}}</td>
+                    <td>{{usuario.usuarioNumeroDocumento}}</td>
+                    <td>{{usuario.usuarioCorreo}}</td>
+                    <td>{{usuario.usarioRol}}</td>
+                    <td>{{usuario.usuarioActivo}}</td>
+                </tr>
+            {% endfor %}
+           
+        </tr>
+    </table>
 {% endblock container %}
     
