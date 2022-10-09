@@ -5,15 +5,15 @@
         <a href="https://www.sincron.co/" target="_blank" rel="noopener noreferrer" class="d-flex align-items-center col-md-1 mb-2 mb-md-0 text-dark text-decoration-none">
             <img class="bi me-2" width="250" height="70" role="img" src="{% static 'img/LogoHorizontal.webp' %}" alt="logo sincron.co"></a>        
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-dark">Inicio</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Gestión</a></li>
+            <li><a href="{% url 'inicio' %}" class="nav-link px-2 link-dark">Inicio</a></li>
+            <li><a href="{% url 'gestionClientes' %}" class="nav-link px-2 link-dark">Gestión</a></li>
             <li><a href="#" class="nav-link px-2 link-dark d-block link-dark text-decoration-none "  data-bs-toggle="dropdown" aria-expanded="false"> Configuracíon</a>
                 <ul class="dropdown-menu text-small ">
-                    <li><a class="dropdown-item" href="#">Usuairios</a></li>
-                    <li><a class="dropdown-item" href="#">Estado de gestión</a></li>
-                    <li><a class="dropdown-item" href="#">Servicio orfrecido</a></li>
-                    <li><a class="dropdown-item" href="#">categoria </a></li>
-                    <li><a class="dropdown-item" href="#">Servicio orfrecido</a></li>
+                    <li><a class="dropdown-item" href="{% url 'usuarios' %}">Usuairios</a></li>
+                    <li><a class="dropdown-item" href="{% url 'configuracion' %}">Estado de gestión</a></li>
+                    <li><a class="dropdown-item" href="{% url 'configuracion' %}">Servicio orfrecido</a></li>
+                    <li><a class="dropdown-item" href="{% url 'configuracion' %}">categoria </a></li>
+                    <li><a class="dropdown-item" href="{% url 'configuracion' %}">Servicio orfrecido</a></li>
                 </ul> 
             </li>
             <li><a href="#" class="nav-link px-2 link-dark">Auditoria</a></li>

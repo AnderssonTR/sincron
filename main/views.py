@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
 def inicio(request):
-    titulo='inicio'
+    titulo='Inicio'
     context={
-        'titutlo':titulo,
+        'titulo':titulo,
     }
     return render(request,'index.html',context)
