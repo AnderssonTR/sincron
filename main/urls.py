@@ -16,13 +16,15 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path,include
+from django.conf.urls import handler404
+from main.views import inicio,inicioSesion,error_404
 
-
-from main.views import inicio
+handler404=error_404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',inicio,name='inicio'),
+    path('inicio/',inicio,name='inicio'),
+    path('',inicioSesion,name='inicioSesion'),
     
     path('usuarios/',include('usuarios.urls') ),
     path('configuracion/',include('configuracion.urls') ),

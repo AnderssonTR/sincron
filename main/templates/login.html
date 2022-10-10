@@ -1,0 +1,56 @@
+{% load static %}
+
+{#cargar la libreria#}
+{% load bootstrap5 %}
+
+{#cargar css y js de bootstrap#}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{#carga mensajes#}
+{% bootstrap_messages %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,500;0,700;0,800;1,100;1,200;1,300&display=swap" rel="stylesheet">
+    <title>SINCRON {{titulo}}</title>
+    <link rel="shortcut icon" href="{% static 'img/iconSincron.png' %}" />
+</head>
+<body class=" text-center ">
+    <main class="mt-5  form-signin w-100 m-auto " style="max-width: 330px">
+        <form>
+            <img class="mt-5 mb-4" role="img" src="{% static 'img/LogoHorizontal.webp' %}" alt=""  width="250" height="70" alt="logo sincron.co">      
+            <h1 class="h3 mb-3 fw-normal">Inice sesión </h1>
+    
+            <div class="form-floating">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Usuario</label>
+            </div>
+            <div class="form-floating mb-2">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+                <label for="floatingPassword">Contraseña</label>
+            </div>
+    
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Recordar
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+            <p class="mt-2 mb-3">
+                <a href="#">Olvide mi contraseña <a>
+            </p>
+            <p class="mt-2 mb-3 text-muted">© 2022</p>
+        </form>
+     </main>
+</body>
+</html>
+
+
