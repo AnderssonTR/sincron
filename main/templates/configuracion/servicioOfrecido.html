@@ -1,0 +1,29 @@
+{% extends 'partials/body.html' %}
+
+{% block container %}
+    <h2>{{titulo}}</h2>
+    <a class="btn btn-primary " href="{% url 'servicioOfrecido-crear' %}">Crear</a>
+  
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Servicio</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Estado</th>
+
+            </tr>
+        </thead>
+        <tr>
+            
+            {% for servicio in servicios  %}
+                <tr>
+                    <td>{{servicio.servicioOfrecidoNombre}}</td>
+                    <td>{{servicio.servicioOfrecidoDesripcion}}</td>
+                    <td>{{servicio.servicioOfrecidoActivo}}</td>
+                </tr>
+            {% endfor %}
+           
+        </tr>
+    </table>
+{% endblock container %}
+    
