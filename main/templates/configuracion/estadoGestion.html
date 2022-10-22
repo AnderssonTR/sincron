@@ -1,0 +1,28 @@
+{% extends 'partials/body.html' %}
+
+{% block container %}
+    <h2>{{titulo}}</h2>
+    <a class="btn btn-primary " href="{% url 'estadoGestion-crear' %}">Crear</a>
+  
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Estado Gestion</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Estado</th>
+
+            </tr>
+        </thead>
+        <tr>
+            
+            {% for estado in estados  %}
+                <tr>
+                    <td>{{estado.estadoGestionNombre}}</td>
+                    <td>{{estado.estadoGestionDescripcion}}</td>
+                    <td>{{estado.estadoGestionActivo}}</td>
+                </tr>
+            {% endfor %}
+           
+        </tr>
+    </table>
+{% endblock container %}
