@@ -14,6 +14,7 @@
                 <th scope="col">e-mail</th>
                 <th scope="col">Rol</th>
                 <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
 
             </tr>
         </thead>
@@ -21,13 +22,19 @@
             
             {% for usuario in usuarios  %}
                 <tr>
-                    <th scope="row">{{usuario.usuarioNombre}}</th>
-                    <td>{{usuario.usuarioApellido}}</td>
-                    <td>{{usuario.usuarioTipoDocumento}}</td>
-                    <td>{{usuario.usuarioNumeroDocumento}}</td>
-                    <td>{{usuario.usuarioCorreo}}</td>
-                    <td>{{usuario.usarioRol}}</td>
-                    <td>{{usuario.usuarioActivo}}</td>
+                    
+                    {% if usuario.usuarioActivo == '1' %}               
+                        <th scope="row">{{usuario.usuarioNombre}}</th>
+                        <td>{{usuario.usuarioApellido}}</td>
+                        <td>{{usuario.usuarioTipoDocumento}}</td>
+                        <td>{{usuario.usuarioNumeroDocumento}}</td>
+                        <td>{{usuario.usuarioCorreo}}</td>
+                        <td>{{usuario.usarioRol}}</td>
+                        <td>{{usuario.usuarioActivo}}</td>
+                        <td><a class="btn btn-primary" href="{% url 'usuarios-editar' usuario.id %}"><i class="fas fa-edit"></i></a>
+                            <a class="btn btn-danger" href="{% url 'usuarios-eliminar' usuario.id %}"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    {% endif %}
                 </tr>
             {% endfor %}
            

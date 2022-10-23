@@ -1,0 +1,26 @@
+{% extends 'partials/body.html' %}
+
+{% block container %}
+    <h2>{{titulo}}</h2>
+    <a class="btn btn-primary " href="{% url 'categoria-crear' %}">Crear</a>
+  
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Descripción</th>
+                <th scope="col">Estado</th>
+
+            </tr>
+        </thead>
+        <tr>
+            
+            {% for categoria in categorias  %}
+                <tr>
+                    <td>{{categoria.categoriaDescripcion}}</td>
+                    <td>{{categoria.categoriaActivo}}</td>
+                </tr>
+            {% endfor %}
+           
+        </tr>
+    </table>
+{% endblock container %}

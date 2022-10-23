@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
-from configuracion.forms import EstadoGesionForm, ServicioOfrecidoForm
-from configuracion.models import EstadoGestion, ServicioOfrecido
+from configuracion.forms import CategoriasForm, EstadoGesionForm, ServicioOfrecidoForm, SubCategoriasForm
+from configuracion.models import Categoria, EstadoGestion, ServicioOfrecido, SubCategoria
 
 
 # Create your views here.
@@ -61,3 +61,60 @@ def estadoGestion_crear(request):
         'form':form,
     }
     return render (request, 'configuracion/estadoGestion-crear.html',context)
+
+
+# Vistas para categoria
+def categoria(request):
+    titulo='Categoria'
+    categorias=Categoria.objects.all()
+    context={
+        'titulo':titulo,
+        'categorias':categorias,
+    }
+    return render (request, 'configuracion/categoria.html',context)
+
+def categoria_crear(request):
+    titulo='Categoria / crear'
+    if request.method=="POST":
+        form=CategoriasForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('categoria')
+        else:
+            print("Error")
+    else:
+        form=CategoriasForm()
+
+    context={
+        'titulo':titulo,
+        'form':form,
+    }
+    return render (request, 'configuracion/categoria-crear.html',context)
+
+# Vistas para subCategoria
+def subCategoria(request):
+    titulo='subCategoria'
+    subCategorias=SubCategoria.objects.all()
+    context={
+        'titulo':titulo,
+        'subCategorias':subCategorias,
+    }
+    return render (request, 'configuracion/subCategoria.html',context)
+
+def subCategoria_crear(request):
+    titulo='subCategoria / crear'
+    if request.method=="POST":
+        form=SubCategoriasForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('subCategoria')
+        else:
+            print("Error")
+    else:
+        form=SubCategoriasForm()
+
+    context={
+        'titulo':titulo,
+        'form':form,
+    }
+    return render (request, 'configuracion/subCategoria-crear.html',context)
